@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="QRCodeReaderDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QRCode Text :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaZ-zB-XPr">
+                                <rect key="frame" x="16" y="546" width="101" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="AqK-Y0-w3G"/>
+                                    <constraint firstAttribute="width" constant="101" id="CCK-8X-u5y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.2078431547" blue="0.21568629149999999" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO QRCode text detacted" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvR-Gt-BTu">
+                                <rect key="frame" x="122" y="546" width="462" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="462" id="WU1-Rz-WcX"/>
+                                    <constraint firstAttribute="height" constant="46" id="r87-l8-Hki"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.2078431547" blue="0.21568629149999999" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xaZ-zB-XPr" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="1al-ly-CHn"/>
+                            <constraint firstItem="lvR-Gt-BTu" firstAttribute="leading" secondItem="xaZ-zB-XPr" secondAttribute="trailing" constant="5" id="GK2-mC-C5q"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lvR-Gt-BTu" secondAttribute="bottom" constant="8" id="Iw4-3I-mLq"/>
+                            <constraint firstItem="lvR-Gt-BTu" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="gxo-Ff-m4S"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="xaZ-zB-XPr" secondAttribute="bottom" constant="8" id="oef-WJ-HJQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblQRCodeLabel" destination="xaZ-zB-XPr" id="xYK-LB-Wou"/>
+                        <outlet property="lblQRCodeResult" destination="lvR-Gt-BTu" id="dRi-3N-U3H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244" y="218"/>
+        </scene>
+    </scenes>
+</document>
