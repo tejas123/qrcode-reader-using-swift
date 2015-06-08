@@ -36,7 +36,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             return
         }
         objCaptureSession = AVCaptureSession()
-        objCaptureSession?.addInput(objCaptureDeviceInput as AVCaptureInput)
+        objCaptureSession?.addInput(objCaptureDeviceInput as! AVCaptureInput)
         let objCaptureMetadataOutput = AVCaptureMetadataOutput()
         objCaptureSession?.addOutput(objCaptureMetadataOutput)
         objCaptureMetadataOutput.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
@@ -67,9 +67,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             lblQRCodeResult.text = "NO QRCode text detacted"
             return
         }
-        let objMetadataMachineReadableCodeObject = metadataObjects[0] as AVMetadataMachineReadableCodeObject
+        let objMetadataMachineReadableCodeObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         if objMetadataMachineReadableCodeObject.type == AVMetadataObjectTypeQRCode {
-            let objBarCode = objCaptureVideoPreviewLayer?.transformedMetadataObjectForMetadataObject(objMetadataMachineReadableCodeObject as AVMetadataMachineReadableCodeObject) as AVMetadataMachineReadableCodeObject
+            let objBarCode = objCaptureVideoPreviewLayer?.transformedMetadataObjectForMetadataObject(objMetadataMachineReadableCodeObject as AVMetadataMachineReadableCodeObject) as! AVMetadataMachineReadableCodeObject
             vwQRCode?.frame = objBarCode.bounds;
             if objMetadataMachineReadableCodeObject.stringValue != nil {
                 lblQRCodeResult.text = objMetadataMachineReadableCodeObject.stringValue
