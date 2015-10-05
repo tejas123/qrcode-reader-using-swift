@@ -29,9 +29,16 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     func configureVideoCapture() {
         let objCaptureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         var error:NSError?
-        let objCaptureDeviceInput: AnyObject! = AVCaptureDeviceInput.deviceInputWithDevice(objCaptureDevice, error: &error)
+        let objCaptureDeviceInput: AnyObject!
+        do {
+            objCaptureDeviceInput = try AVCaptureDeviceInput(device: objCaptureDevice) as AVCaptureDeviceInput
+            
+        } catch let error1 as NSError {
+            error = error1
+            objCaptureDeviceInput = nil
+        }
         if (error != nil) {
-            var alertView:UIAlertView = UIAlertView(title: "Device Error", message:"Device not Supported for this Application", delegate: nil, cancelButtonTitle: "Ok Done") 
+            let alertView:UIAlertView = UIAlertView(title: "Device Error", message:"Device not Supported for this Application", delegate: nil, cancelButtonTitle: "Ok Done") 
             alertView.show()
             return
         }
@@ -47,7 +54,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         objCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: objCaptureSession)
         objCaptureVideoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
         objCaptureVideoPreviewLayer?.frame = view.layer.bounds
-        self.view.layer.addSublayer(objCaptureVideoPreviewLayer)
+        self.view.layer.addSublayer(objCaptureVideoPreviewLayer!)
         objCaptureSession?.startRunning()
         self.view.bringSubviewToFront(lblQRCodeResult)
         self.view.bringSubviewToFront(lblQRCodeLabel)

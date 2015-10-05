@@ -156,6 +156,8 @@
 		4C5E01891A6CC70F005396B4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = TheAppGururz;
 				TargetAttributes = {
@@ -405,6 +407,7 @@
 				4C5E01B21A6CC70F005396B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C5E01B31A6CC70F005396B4 /* Build configuration list for PBXNativeTarget "QRCodeReaderDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +416,7 @@
 				4C5E01B51A6CC70F005396B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
